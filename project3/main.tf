@@ -1,19 +1,6 @@
 # Project 3 - Mixed Environment Infrastructure
 # This module will create both Linux and Windows VMs using the AVM module from git repository
 
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = ">= 3.0.0"
-    }
-  }
-}
-
-provider "azurerm" {
-  features {}
-}
-
 module "mixed_servers" {
   source = "git::https://github.com/manipy/terraform_modules.git//avm?ref=main"
 

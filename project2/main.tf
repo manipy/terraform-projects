@@ -1,19 +1,6 @@
 # Project 2 - Windows Application Infrastructure
 # This module will create Windows application servers using the AVM module from git repository
 
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = ">= 3.0.0"
-    }
-  }
-}
-
-provider "azurerm" {
-  features {}
-}
-
 module "app_servers" {
   source = "git::https://github.com/manipy/terraform_modules.git//avm?ref=main"
 
