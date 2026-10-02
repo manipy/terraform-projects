@@ -15,7 +15,7 @@ provider "azurerm" {
 }
 
 module "web_servers" {
-  source = "git::https://github.com/your-org/terraform-modules.git//avm?ref=main"
+  source = "git::https://github.com/manipy/terraform_modules.git//avm?ref=main"
 
   resource_group_name     = var.resource_group_name
   resource_group_location = var.resource_group_location
