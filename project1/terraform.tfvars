@@ -10,6 +10,6 @@ subnet_name      = "web-subnet"
 vnet_name        = "my-vnet"
 
 admin_username = "azureuser"
-# admin_password = "P@ssw0rd123!" # Change this to a secure password
+admin_password = "P@ssw0rd123!" # Change this to a secure password
 
 environment = "production"
