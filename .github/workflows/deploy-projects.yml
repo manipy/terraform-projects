@@ -75,23 +75,14 @@ jobs:
           terraform plan -out=tfplan
         elif [ "${{ github.event.inputs.action }}" == "apply" ]; then
           terraform plan -out=tfplan
-          if [ "${{ github.event.inputs.auto_approve }}" == "true" ]; then
-            terraform apply -auto-approve tfplan
-          else
-            echo "Manual approval required for apply"
-            terraform apply tfplan
-          fi
+          terraform apply -auto-approve tfplan
         elif [ "${{ github.event.inputs.action }}" == "destroy" ]; then
           terraform plan -destroy -out=tfplan
-          if [ "${{ github.event.inputs.auto_approve }}" == "true" ]; then
-            terraform apply -auto-approve tfplan
-          else
-            echo "Manual approval required for destroy"
-            terraform apply tfplan
-          fi
+          terraform apply -auto-approve tfplan
         fi
-        
-        terraform output -json > "../outputs-${PROJECT_DIR}.json" || echo '{}' > "../outputs-${PROJECT_DIR}.json"
+
+        cd ..
+        terraform -chdir="$PROJECT_DIR" output -json > "outputs-${PROJECT_DIR}.json" || echo '{}' > "outputs-${PROJECT_DIR}.json"
 
     - name: Upload Terraform Outputs
       if: always()
