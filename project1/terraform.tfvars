@@ -5,7 +5,7 @@ resource_group_name     = "project1-web-rg"
 resource_group_location = "eastus"
 
 web_server_count = 1
-vm_size          = "Standard_B1s"
+vm_size          = "Standard_D2as_v4"
 subnet_name      = "web-subnet"
 vnet_name        = "my-vnet"
 
