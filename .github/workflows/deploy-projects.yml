@@ -51,6 +51,11 @@ jobs:
       with:
         terraform_version: ${{ env.TERRAFORM_VERSION }}
 
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+
     - name: Deploy Project
       run: |
         PROJECT_DIR="${{ env.PROJECT_NAME }}"
