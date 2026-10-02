@@ -12,7 +12,7 @@ locals {
     os_disk_size_gb       = 30
     os_publisher          = "Canonical"
     os_offer              = "0001-com-ubuntu-server-jammy"
-    os_sku                = "22_04-lts-gen2"
+    os_sku                = "22_04-lts"
     os_version            = "latest"
     custom_script         = "sudo apt-get update && sudo apt-get install -y nginx && sudo systemctl start nginx"
   }
