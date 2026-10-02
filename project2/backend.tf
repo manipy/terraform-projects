@@ -4,8 +4,8 @@
 terraform {
   backend "azurerm" {
     resource_group_name  = "terraform-state-rg"
-    storage_account_name = "terraformstate12345" # Replace with your storage account name
-    container_name       = "tfstate"             # Replace with your container name
+    storage_account_name = "terraformstatepy"
+    container_name       = "tfstate"
     key                  = "project2/terraform.tfstate"
   }
 }
