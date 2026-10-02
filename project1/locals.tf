@@ -8,7 +8,7 @@ locals {
     admin_username        = var.admin_username
     admin_password        = var.admin_password
     os_type               = "linux"
-    os_disk_storage_type  = "Premium_LRS"
+    os_disk_storage_type  = "Standard_LRS"
     os_disk_size_gb       = 30
     os_publisher          = "Canonical"
     os_offer              = "0001-com-ubuntu-server-jammy"
