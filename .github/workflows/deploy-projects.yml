@@ -91,7 +91,7 @@ jobs:
           fi
         fi
         
-        terraform output -json > "../outputs-${PROJECT_DIR}.json"
+        terraform output -json > "../outputs-${PROJECT_DIR}.json" || echo '{}' > "../outputs-${PROJECT_DIR}.json"
 
     - name: Upload Terraform Outputs
       if: always()
