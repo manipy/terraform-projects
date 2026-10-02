@@ -1,7 +1,7 @@
 # Project 1 Configuration
 # Update these values with your actual configuration
 
-resource_group_name     = "project1-web-rg"
+resource_group_name     = "project-web-rg"
 resource_group_location = "eastus"
 
 web_server_count = 1
