@@ -1,0 +1,16 @@
+# Project 2 Configuration Example
+# Copy this file to terraform.tfvars and update with your actual values
+
+resource_group_name     = "project2-app-rg"
+resource_group_location = "eastus"
+
+app_server_count = 2
+vm_size          = "Standard_DS2_v2"
+subnet_name      = "app-subnet"
+vnet_name        = "my-vnet"
+
+admin_username   = "azureuser"
+admin_password   = "CHANGE_THIS_TO_SECURE_PASSWORD"
+
+environment      = "production"
+windows_version  = "2019-Datacenter"

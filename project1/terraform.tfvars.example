@@ -1,0 +1,15 @@
+# Project 1 Configuration Example
+# Copy this file to terraform.tfvars and update with your actual values
+
+resource_group_name     = "project1-web-rg"
+resource_group_location = "eastus"
+
+web_server_count = 2
+vm_size          = "Standard_DS1_v2"
+subnet_name      = "web-subnet"
+vnet_name        = "my-vnet"
+
+admin_username = "azureuser"
+admin_password = "CHANGE_THIS_TO_SECURE_PASSWORD"
+
+environment = "production"
