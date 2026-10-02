@@ -50,11 +50,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: ${{ env.TERRAFORM_VERSION }}
-
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}     
+        terraform_wrapper: false
 
     - name: Terraform Init
       run: |
@@ -77,13 +73,7 @@ jobs:
     - name: Terraform Plan
       run: |
         cd "${{ env.PROJECT_NAME }}"
-        if [ "${{ github.event.inputs.action }}" == "plan" ]; then
-          terraform plan -out=tfplan
-        elif [ "${{ github.event.inputs.action }}" == "apply" ]; then
-          terraform plan -out=tfplan
-        elif [ "${{ github.event.inputs.action }}" == "destroy" ]; then
-          terraform plan -destroy -out=tfplan
-        fi
+        terraform plan -out=tfplan -parallelism=10
 
     - name: Terraform Apply
       if: github.event.inputs.action == 'apply' || github.event.inputs.action == 'destroy'
