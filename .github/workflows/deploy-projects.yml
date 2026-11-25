@@ -12,6 +12,7 @@ on:
         - project1
         - project2
         - project3
+        - project4
       action:
         description: 'Action to perform'
         required: true
